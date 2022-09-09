@@ -313,13 +313,15 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
-    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
+    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: ssl
     service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
     service.beta.kubernetes.io/aws-load-balancer-type: nlb
     service.beta.kubernetes.io/aws-load-balancer-name: basics-lbc-network-lb
-    service.beta.kubernetes.io/aws-load-balancer-subnets: subnet-08826e016edcaa469, subnet-0e1fd8374254f2d4c, subnet-0f00830bfa7c8edd2
+    service.beta.kubernetes.io/aws-load-balancer-subnets: subnet-068fb05985a54146c
     service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
     service.beta.kubernetes.io/aws-load-balancer-type: external
+    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "443"
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:xxxx
     # Access Control
     service.beta.kubernetes.io/load-balancer-source-ranges: 0.0.0.0/0
     service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"
